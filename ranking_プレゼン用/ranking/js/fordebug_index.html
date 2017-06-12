@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head> <title>Ranking</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="rankingapi.js"> </script>
+</head>
+<body>
+<input type="text" id="target">
+<input type="button" value="Get Ranking!" onclick="getRanking(target.value);">
+<!--<script>getRanking("キットカット");</script>-->
+<div>ジャンルは<div id="ItemGenre"></div>です</div>
+<div>ランクは<div id="Ranking"></div>です</div>
+<div id="ResultList"></div>
+
+</body>
+</html>
