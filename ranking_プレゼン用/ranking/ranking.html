@@ -7,9 +7,20 @@
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css"/>
 		<link rel="stylesheet" type="text/css" href="assets/css/custom.css"/>
-	</head>
+	    <script type="text/javascript" src="assets/js/rankingapi.js"> </script>
+        <script>
+            var　FORM = new　Array();
+        　　var　buffer = location.search.substr(1);
+        　　var　pairs = buffer.split("&");
 
+        　　for (var　i　in　pairs) {
+        　　　　var　pair = pairs[i].split("=");
+        　　　　FORM[pair[0]] = unescape(pair[1].replace("+", " "));
+        　　}
+        </script>
+    </head>
 	<body>
+        <script> getRanking(FORM.nm);</script>
 		<nav class="navbar">
 			<div class="container">
 				<a class="navbar-brand" href="index.html"><img src="assets/images/logo2.png" alt=""></a>
@@ -18,44 +29,24 @@
 				</div>
 			</div>
 		</nav>
+
 		<div class="container-fluid breadcrumbBox text-center">
 			<ol class="breadcrumb">
 				<li><a href="index.html">TOP</a></li>
-				<li class="active"><a href="#">1.UPLOAD & SEARCH</a></li>
-				<li><a id="fuga" href="ranking.html">2.RANKING</a></li>
+				<li><a href="upload.html">1.UPLOAD & SEARCH</a></li>
+				<li class="active"><a href="">2.RANKING</a></li>
 			</ol>
 		</div>
 		<div class="container text-center">
-		<div class="tab-content">
-		<div class="tab-pane active" id="all">
-		<div class="blockDtl">
-			<img id="hoge" src="assets/images/img-11.png" alt="">
-		</div>
-<!--
-		<div class="uploadButton">
-        画像をアップする
-	    <input type="file" onchange="uv.style.display='inline-block'; uv.value = this.value;" />
-	    <input type="text" id="uv" class="uploadValue" disabled />
-		</div>
--->
-		<input class="container text-center" type="file" id="files" name="files[]" multiple />
-        <script>
-          function handleFileSelect(evt) {
-            var files = evt.target.files; // FileList object
-            document.getElementById('hoge').setAttribute("src", "assets/images/" + files[0].name);
-            var next_page = ""
-            if (files[0].name == "kinoko.jpeg") {
-              next_page = "ranking.html?nm=チョコボール"
-            } else {
-              next_page = "ranking.html?nm=コアラのマーチ"
-            }
-            document.getElementById('fuga').setAttribute("href", next_page);
-          }
-          document.getElementById('files').addEventListener('change', handleFileSelect, false);
-        </script>	    
-      </div>
-	</div>
-</div>
+			<div class="tab-content">
+				<div class="tab-pane active" id="all">
+				    <div class="moji"><script>document.write(FORM.nm);</script></div>
+			    	<div class="category" id="ItemGenreName">〇〇</div>
+					    <span class=moji>部門</span>
+					<div class="rank"  id="Ranking">x</div>
+                        <span class=moji>位</span>
+				</div>
+			</div>
 
 		</div>
 

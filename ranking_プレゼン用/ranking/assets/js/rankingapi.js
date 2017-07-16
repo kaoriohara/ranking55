@@ -77,6 +77,7 @@ function getRanking(i_target) {
         console.error("Network Error1");
     });
     request.send();
+    return {"genre":o_itemgenre, "rank":o_ranking};
 }
 
 
